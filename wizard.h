@@ -2,14 +2,14 @@
 #include <iostream>
 #include "entity.h"
 
-class mage : public entity {
+class wizard : public entity {
 public: 
-    mage();
+    wizard();
 
     // Overriding base functions
     void attack(int typeofatk) override;
     void damage(int atk) override;
     void heal() override;
     void display() override;
-    ~mage();
+    ~wizard();
 };
