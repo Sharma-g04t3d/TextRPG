@@ -1,7 +1,7 @@
 #include <iostream>
 #include "wizard.h"
 
-mage::mage() {
+wizard::wizard() {
     maxHealth = 100;
     Health = maxHealth;
     Name = "Wizard";
@@ -9,9 +9,9 @@ mage::mage() {
 }
 
 // Overriding base functions
-void mage::attack(int typeofatk) {
+void wizard::attack(int typeofatk) {
     if(typeofatk == 0){
-        atk = fireball_w; // currently ignores typeofatk, which is fine if mage always casts fireball
+        atk = fireball_w; // currently ignores typeofatk, which is fine if wizard always casts fireball
     }
     else if(typeofatk == 1){
         atk = thunderbolt_w;
@@ -23,11 +23,11 @@ void mage::attack(int typeofatk) {
     
 }
 
-void mage::damage(int atk) {
+void wizard::damage(int atk) {
     Health -= atk;
 }
 
-void mage::heal() {
+void wizard::heal() {
     if (Health + healamt > maxHealth) {
         Health = maxHealth;
     } else {
@@ -35,10 +35,10 @@ void mage::heal() {
     }
 }
 
-void mage::display() {
+void wizard::display() {
     std::cout << "[" << Name << " Health] : " << Health << std::endl;
 }
 
-mage::~mage() {
+wizard::~wizard() {
     std::cout << "[" << Name << "] : Destroyed" << std::endl;
 }
